@@ -1,0 +1,50 @@
+---
+title: "Delete account"
+sidebarTitle: "Delete account"
+description: "注销并删除当前用户的账户"
+api: "DELETE https://api.example.com/v1/account/me"
+playground: "interactive"
+---
+
+永久删除当前用户的账户及其所有数据。此操作不可恢复。
+
+<Warning>
+  调用此接口后，用户的所有数据将被不可逆地删除。
+</Warning>
+
+## Headers
+
+<ParamField header="Authorization" type="string" required>
+  Bearer access token。
+</ParamField>
+
+## Body
+
+<ParamField body="password" type="string" required>
+  当前密码，用于二次确认身份。
+</ParamField>
+
+<ParamField body="reason" type="string">
+  可选。注销原因，用于产品改进。
+</ParamField>
+
+## Response
+
+<ResponseField name="success" type="boolean">
+  是否删除成功。
+</ResponseField>
+
+<ResponseField name="deleted_at" type="string">
+  删除时间，ISO 8601 格式。
+</ResponseField>
+
+<ResponseExample>
+
+```json 200
+{
+  "success": true,
+  "deleted_at": "2026-06-22T10:00:00Z"
+}
+```
+
+</ResponseExample>

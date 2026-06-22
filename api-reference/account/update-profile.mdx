@@ -1,0 +1,60 @@
+---
+title: "Update profile"
+sidebarTitle: "Update profile"
+description: "更新当前用户的个人资料"
+api: "PATCH https://api.example.com/v1/account/me"
+playground: "interactive"
+---
+
+部分更新当前用户的个人资料。只需传入需要修改的字段。
+
+## Headers
+
+<ParamField header="Authorization" type="string" required>
+  Bearer access token。
+</ParamField>
+
+## Body
+
+<ParamField body="username" type="string">
+  新用户名，3–32 字符。
+</ParamField>
+
+<ParamField body="email" type="string">
+  新邮箱地址。修改后需要重新验证。
+</ParamField>
+
+<ParamField body="avatar_url" type="string">
+  头像图片 URL。
+</ParamField>
+
+## Response
+
+<ResponseField name="id" type="string">
+  用户唯一 ID。
+</ResponseField>
+
+<ResponseField name="email" type="string">
+  更新后的邮箱。
+</ResponseField>
+
+<ResponseField name="username" type="string">
+  更新后的用户名。
+</ResponseField>
+
+<ResponseField name="avatar_url" type="string">
+  更新后的头像 URL。
+</ResponseField>
+
+<ResponseExample>
+
+```json 200
+{
+  "id": "usr_123",
+  "email": "jane@example.com",
+  "username": "jane_doe",
+  "avatar_url": "https://cdn.example.com/avatars/jane.png"
+}
+```
+
+</ResponseExample>
