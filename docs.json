@@ -32,24 +32,34 @@
         }
       ]
     },
-    "groups": [
+    "tabs": [
       {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
+        "tab": "Getting Started",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "index",
+              "quickstart"
+            ]
+          }
         ]
       },
       {
-        "group": "API Reference",
-        "pages": [
+        "tab": "API Reference",
+        "groups": [
           {
-            "group": "Account",
+            "group": "API Reference",
             "pages": [
-              "api-reference/account/get-current-user.mdx",
-              "api-reference/account/update-profile.mdx",
-              "api-reference/account/change-password.mdx",
-              "api-reference/account/delete-account.mdx"
+              {
+                "group": "Account",
+                "pages": [
+                  "api-reference/account/get-current-user.mdx",
+                  "api-reference/account/update-profile.mdx",
+                  "api-reference/account/change-password.mdx",
+                  "api-reference/account/delete-account.mdx"
+                ]
+              }
             ]
           }
         ]
